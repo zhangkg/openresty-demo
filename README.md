@@ -4,6 +4,8 @@
 
 Openresty = Nginx + ngxhttp\_lua\_module + lua_resty\*
 
+既然提到Openresty，那么就不得不提一下它的作者「章亦春」；关于"春哥"的介绍，在此就不多说了，神一样的程序员，大家可以在知乎上去了解一下它 [传送门](https://www.zhihu.com/question/28951394)。
+
 ## 常见的利用场景有哪些？
 
 ### 1.动态负载均衡
@@ -12,7 +14,9 @@ Openresty = Nginx + ngxhttp\_lua\_module + lua_resty\*
 - 根据请求特征将流量分配到不同分组并限流（爬虫、或者流量大的IP）。
 - 动态流量（动态增加upstream或者减少upstream或者动态负载均衡）可以使用balancer_by_lua或者微博开源的upsync。
 
-### 2.防火墙（DDOS、IP/URL/UserAgent/Referer黑名单、防盗链等）
+### 2.防火墙
+
+如：DDOS、IP/URL/UserAgent/Referer黑名单、防盗链等。
 
 - 非法请求过滤，比如应该有Referer却没有，或者应该带着Cookie却没有Cookie。
 - 请求头过滤，比如有些业务是不需要请求头的，因此可以在往业务Nginx转发时把这些数据过滤掉。
@@ -44,7 +48,7 @@ Nginx会在服务端把Nginx并发的请求并把结果聚合然后一次性吐�
 
 ## 怎么安装？
 
-[openresty下载地址](https://openresty.org/en/download.html)
+openresty下载地址:[传送门](https://openresty.org/en/download.html)。
 
 本例子只是说明在非windows平台的安全，windows平台直接下载相应的安装包就ok了。
 
@@ -171,3 +175,9 @@ nginx/sbin/nginx -s quit
 - 静态文件合并:[nginx-lua-static-merger](https://github.com/grasses/nginx-lua-static-merger)
 
 - 动态检测后端服务节点的状态:[lua-resty-upstream-healthcheck](https://github.com/openresty/lua-resty-upstream-healthcheck)
+
+## 视频资料
+
+- OpenResty 2016深圳大会视频:[传送门](https://pan.baidu.com/s/1kUHLxuZ) 密码（2fep）。
+
+**说明：文中的链接不能点击，请阅读原文查看！！！**
